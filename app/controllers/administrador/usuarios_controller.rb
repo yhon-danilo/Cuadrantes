@@ -1,8 +1,8 @@
 class Administrador::UsuariosController < ApplicationController
   before_action :set_usuario, :only => [:show, :edit, :update, :destroy]
-
+  before_filter :guardar_estado, :only => [:new, :create]
   def index
-
+    @usuarios = Usuario.all
   end
 
   def new
@@ -12,7 +12,7 @@ class Administrador::UsuariosController < ApplicationController
   def create
     @usuario = Usuario.new(parametros_usuario)
     if @usuario.save
-      redirect_to @usuario
+      redirect_to administrador_usuario_path(@usuario)
     else
       render 'new'
     end  
@@ -28,10 +28,19 @@ class Administrador::UsuariosController < ApplicationController
   end
 
   def update
+    if @usuario.update(parametros_usuario)
+      @usuario.save
+      render 'show'
+    end
 
   end
 
   def destroy
+
+    if @usuario.delete
+      @usuario.destroy
+      redirect_to administrador_usuarios_path
+    end
 
   end
 
@@ -42,6 +51,6 @@ class Administrador::UsuariosController < ApplicationController
   end
 
   def parametros_usuario
-    params.require(:usuario).permit(:nombre_usuario, :password, :nombre, :apellido)
+    params.require(:usuario).permit(:nombre_usuario, :contrasena, :confirmacion_contrasena, :nombre, :apellido)
   end
 end

@@ -10,8 +10,8 @@
 
 	<%= form_for([:administrador, @usuario]) do |f|%>
 		<p> Usuario: </br><%=f.text_field :nombre_usuario%></p>
-		<p> Contrasena: </br><%=f.password_field :password%></p>
-		<p> Confirmar contrasena: </br> <%=f.password_field :password_confirmation%></p>
+		<p> Contrasena: </br><%=f.password_field :contrasena%></p>
+		<p> Confirmar contrasena: </br> <%=f.password_field :confirmacion_contrasena%></p>
 		<p> Nombres: </br><%=f.text_field :nombre%></p>
 		<p> Apellidos: </br><%=f.text_field :apellido%></p>
 		

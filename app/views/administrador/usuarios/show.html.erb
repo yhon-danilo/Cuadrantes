@@ -1,0 +1,24 @@
+<div class="bs-example" data-example-id="condensed-table">
+
+    <table class="table table-condensed">
+        <thead>
+            <tr>
+                <th> ID   </th>
+                <th> USUARIO </th>
+                <th> NOMBRE DEL USUARIO </th>
+                <th> APELLIDO DEL USUARIO </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td> <%=@usuario.id%> </td>
+                <td> <%=@usuario.nombre_usuario%> </td>
+                <td> <%=@usuario.nombre%> </td>
+                <td> <%=@usuario.apellido%> </td>
+            </tr>
+           
+        </tbody>
+    </table>
+    <%=link_to 'Regresar a usuarios', administrador_usuarios_path%>
+
+</div>

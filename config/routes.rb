@@ -1,11 +1,19 @@
 Rails.application.routes.draw do
-  get 'sesiones/login'
+  #get 'sesiones/login'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
   namespace :administrador do
     resources :usuarios
   end
+
+  get "cerrarsesion" => 'sesiones#logout', :as => 'cerrarsesion' 
+  get "iniciarsesion" => 'sesiones#new', :as => 'iniciarsesion'
+
+  root to: "sesiones#new"
+  
+  resources :sesiones
+  
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
 
