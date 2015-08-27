@@ -2,10 +2,15 @@ Rails.application.routes.draw do
   namespace :administrador do
   get 'clientes/index'
   end
-
+  
   namespace :administrador do
-  get 'clientes/importar'
+    resources :clientes do
+      collection {post :importar}
+    end
   end
+  #namespace :administrador do
+  #get 'clientes/importar'
+  #end
 
   #get 'sesiones/login'
 
