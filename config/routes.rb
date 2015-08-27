@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
+  namespace :administrador do
+  get 'clientes/index'
+  end
+
+  namespace :administrador do
+  get 'clientes/importar'
+  end
+
   #get 'sesiones/login'
 
   # The priority is based upon order of creation: first created -> highest priority.

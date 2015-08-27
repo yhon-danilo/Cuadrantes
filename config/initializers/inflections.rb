@@ -8,6 +8,7 @@
 #   inflect.singular /^(ox)en/i, '\1'
    inflect.irregular 'usuario', 'usuarios'
    inflect.irregular 'sesion', 'sesiones'
+   inflect.irregular 'cliente', 'clientes'
 #   inflect.uncountable %w( fish sheep )
  end
 
